@@ -1,4 +1,6 @@
 @import url('./common.css');
+@import url('./modal.css');
+
 header {
   display: flex;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -118,17 +120,17 @@ a {
 
 .titulo-pendentes {
   position: relative;
-  width: 8em;
+  width: 10em;
   text-align: center;
   padding: .5em 1em;
   background-color: white;
-  border-radius: .2em;
+  border-radius: .5rem;
   box-shadow: 3px 3px 5px lightgrey;
-  color: rgb(170, 170, 170);
+  color: #9dc595;
   font-weight: 400;
   font-size: 1.1em;
   margin-left: calc(15% - 4em);
-  margin-top: 5%;
+  margin-top: 3%;
   z-index: 20;
 }
 
@@ -215,13 +217,13 @@ a {
 
 .titulo-terminadas {
   position: relative;
-  width: 8em;
+  width: 10em;
   text-align: center;
   padding: .5em 1em;
   background-color: white;
-  border-radius: .2em;
+  border-radius: .5rem;
   box-shadow: 3px 3px 5px lightgrey;
-  color: rgb(170, 170, 170);
+  color: #e0b8b8;
   font-weight: 400;
   font-size: 1.1em;
   margin-left: calc(15% - 4em);

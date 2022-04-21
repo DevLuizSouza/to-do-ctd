@@ -18,7 +18,8 @@ const usuarioObjeto = {
 }
 
 botaoAcessar.addEventListener('click', function(evento){
-
+    mostrarSpinner();
+    
     if (validacaoTelaDeLogin()) {
         
         //Normalizando as informações
@@ -69,7 +70,7 @@ function loginSucesso(jwtRecebido) {
     //console.log(jwtRecebido);
     localStorage.setItem("jwt",jwtRecebido);
 
-    alert("Usuário logado com sucesso")
+    // alert("Usuário logado com sucesso")
     location.href = "tarefas.html"
 }
 function loginErro(statusRecebido){
@@ -170,4 +171,18 @@ function validacaoTelaDeLogin () {
 }
 
 
+//Visualizando o valor dos campos de Senha clicando no ícone de olho
 
+const btnMostrarSenha3 = document.getElementById('eyeSenha3');
+btnMostrarSenha3.addEventListener('click', () => {
+
+    if(campoSenhaLogin.getAttribute('type') === 'password'){
+        campoSenhaLogin.setAttribute('type', 'text');
+        btnMostrarSenha3.setAttribute('src', './assets/eye.svg');
+    }
+
+    else if(campoSenhaLogin.getAttribute('type') === 'text'){
+        campoSenhaLogin.setAttribute('type', 'password');    
+        btnMostrarSenha3.setAttribute('src', './assets/eye-off.svg');
+    } 
+});

@@ -4,6 +4,7 @@ tarefasPendetes.innerHTML = "";
 const tarefasTerminadas = document.querySelector('.tarefas-terminadas');
 tarefasTerminadas.innerHTML = "";
 
+
 function renderizaTarefasTerminadas(tarefa) {
     //Da para utilizar o método toLocaleDateString() e 'new Date()' para transformar a data no formato PT-BR
     const addData = new Date(tarefa.createdAt);
@@ -13,7 +14,7 @@ function renderizaTarefasTerminadas(tarefa) {
         <div class="descricao">
             <div class="descricaoECriacao">
             <p class="timestamp timestamp-done">
-                Tarefa criada em 
+                Tarefa ${tarefa.id} criada em 
                 ${addData.toLocaleDateString()} às
                 ${addData.getHours()}:${addData.getMinutes()}
                 <i class="far fa-calendar-alt"></i>
@@ -21,7 +22,7 @@ function renderizaTarefasTerminadas(tarefa) {
             <p class="nome">${tarefa.description}</p>
             </div>
             <div class="icones-edit">
-                <button id="${tarefa.id}" title="Ativar tarefa novamente"><i class="fa-solid fa-edit change"></i></button>
+                <button onclick="alterarEstadoDaTarefa(${tarefa.id})" id="${tarefa.id}" title="Editar tarefa"><i class="fa-solid fa-edit change"></i></button>
                 <button onclick="excluirTarefa(${tarefa.id})" id="${tarefa.id}" title="Excluir tarefa"><i class="fa fa-trash"></i></button>
             </div>
         </div>
@@ -37,7 +38,7 @@ function renderizaTarefasPendentes(tarefa) {
         <div class="descricao">
             <div class="descricaoECriacao">
             <p class="timestamp">
-                Tarefa criada em 
+                Tarefa ${tarefa.id} criada em 
                 ${addData.toLocaleDateString()} às
                 ${addData.getHours()}:${addData.getMinutes()}
                 <i class="far fa-calendar-alt"></i>
@@ -45,7 +46,7 @@ function renderizaTarefasPendentes(tarefa) {
             <p class="nome">${tarefa.description}</p>
             </div>
             <div class="icones-edit">
-                <button onclick="alterarEstadoDaTarefa(${tarefa.id})" id="${tarefa.id}" title="Marcar como terminada"><i class="fa-solid fa-edit"></i></button>
+                <button onclick="alterarEstadoDaTarefa(${tarefa.id})" id="${tarefa.id}" title="Editar tarefa"><i class="fa-solid fa-edit"></i></button>
                 <button onclick="excluirTarefa(${tarefa.id})" id="${tarefa.id}" title="Excluir tarefa"><i class="fa fa-trash"></i></button>
             </div>
         </div>

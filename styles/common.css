@@ -123,3 +123,10 @@ button {
     margin: .4rem 0 .4rem -1.2rem;
     color: red;
  }
+
+ .true-requirement{
+  color: #6e62fe;
+  font-weight: bold;
+  list-style-type: disc;
+ }
+ 
